@@ -10,10 +10,10 @@ body{
     font-size: medium;
     display: flex;
     flex-wrap: wrap;
-    justify-content: wrap;
+    justify-content: center;
     justify-content: flex-start;
 
     color: white;
-    
+
 
 }
