@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(99, 5, 5);
+
+}
+
+.header{
+    font-family: Goldman;
+    text-decoration: underline;
+    font-size: bold 500;
+    font-size: medium;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: wrap;
+    justify-content: flex-start;
+
+    color: white;
+    
+
+}
