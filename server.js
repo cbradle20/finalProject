@@ -29,7 +29,7 @@ app.route('/api')
   .post(async(req, res) => {
 
     console.log('POST request detected');
-    const data = await fetch('https://data.princegeorgescountymd.gov/api/views/INLINE/rows.json?accessType=DOWNLOAD');
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
     const json = await data.json();
     console.log('Fetch request data', req.body);
     res.json(json);
@@ -38,3 +38,20 @@ app.route('/api')
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
+
+
+/* Links:
+export API endpoints links:
+(The amount of money spent is data point 12 over before the description)
+2015: https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE
+2016: https://data.princegeorgescountymd.gov/resource/csi4-9jzc.json?agency=POLICE
+2017: https://data.princegeorgescountymd.gov/resource/364y-gm2b.json?agency=POLICE
+2018: https://data.princegeorgescountymd.gov/resource/2qma-7ez9.json?agency=POLICE
+2019: https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE
+*/
+
+
+
+
+
+
