@@ -1,3 +1,17 @@
+const arr1 = [];
+ 
+fetch('/api', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())
+.then(data => arr1.push(...data));
+
+
+
+
+
 function payeeConversion(payeesList) {
     return payeesList.reduce((collection, item, i) => {
       const findPayee = collection.find((f) => f.label === item.payee_name);
