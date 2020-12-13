@@ -35,10 +35,6 @@ app.route('/api')
     res.json(json);
   });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
-});
-
 
 /* Links:
 export API endpoints links:
