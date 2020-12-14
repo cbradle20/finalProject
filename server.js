@@ -28,13 +28,70 @@ app.route('/api')
   .post(async(req, res) => {
 
     console.log('POST request detected');
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE');
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
     const json = await data.json();
     console.log('Fetch request data', req.body);
     res.json(json);
     console.log(data.status)
   });
 
+app.route('/api1')
+  .get(async(req, res) => {
+      console.log('GET request detected');
+      res.send(`Lab 5 for ${process.env.NAME}`);
+    })
+  .post(async(req, res) => {
+
+    console.log('POST request detected');
+    const data2 = await fetch('https://data.princegeorgescountymd.gov/resource/csi4-9jzc.json?agency=POLICE');
+    const json2 = await data2.json();
+    console.log('Fetch request data', req.body);
+    res.json(json2);
+    console.log(data2.status)
+  });
+app.route('/api2')
+  .get(async(req, res) => {
+      console.log('GET request detected');
+      res.send(`Lab 5 for ${process.env.NAME}`);
+    })
+  .post(async(req, res) => {
+
+    console.log('POST request detected');
+    const data3 = await fetch('https://data.princegeorgescountymd.gov/resource/364y-gm2b.json?agency=POLICE');
+    const json3 = await data3.json();
+    console.log('Fetch request data', req.body);
+    res.json(json3);
+    console.log(data3.status)
+  });
+
+  app.route('/api3')
+  .get(async(req, res) => {
+      console.log('GET request detected');
+      res.send(`Lab 5 for ${process.env.NAME}`);
+    })
+  .post(async(req, res) => {
+
+    console.log('POST request detected');
+    const data4 = await fetch('https://data.princegeorgescountymd.gov/resource/2qma-7ez9.json?agency=POLICE');
+    const json4 = await data4.json();
+    console.log('Fetch request data', req.body);
+    res.json(json4);
+    console.log(data4.status)
+  });
+  app.route('/api4')
+  .get(async(req, res) => {
+      console.log('GET request detected');
+      res.send(`Lab 5 for ${process.env.NAME}`);
+    })
+  .post(async(req, res) => {
+
+    console.log('POST request detected');
+    const data5 = await fetch('https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE');
+    const json5 = await data5.json();
+    console.log('Fetch request data', req.body);
+    res.json(json5);
+    console.log(data5.status)
+  });
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
