@@ -33,6 +33,7 @@ app.route('/api')
     const json = await data.json();
     console.log('Fetch request data', req.body);
     res.json(json);
+    console.log(json)
   });
 
 app.listen(port, () => {
