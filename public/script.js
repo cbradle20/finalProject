@@ -1,4 +1,4 @@
-const arr2015 = [];
+/*const arr2015 = [];
 const arr2016 = [];
 const arr2017 = [];
 const arr2018 = [];
@@ -50,16 +50,17 @@ fetch('/api4', {
 .then(data5 => arr2019.push(...data5))
 console.log(arr2019);
 ;
+*/
 
-function payeeConversion(arr2015) {
-    return arr2015.reduce((collection, item, i) => {
-      const findPayee = collection.find((f) => f.label === item.payee_name);
-      if (!findPayee) { 
+function payeeConversion(payeeArray) {
+    return payeeArray.reduce((collection, item, i) => {
+      const onlyPayee = collection.find((f) => f.label === item.payee_name);
+      if (!onlyPayee) { 
         collection.push({
-          label: item.payee_name,y: 1
+          label: item.payee_name, y:1
         });
       } else {
-        findPayee.y +=1;
+        onlyPayee.y +=1;
       }
       return collection;
     }, [])
@@ -115,6 +116,23 @@ function payeeConversion(arr2015) {
   }
 
   document.body.addEventListener('submit', async (e) => {
+    e.preventDefault(e);
+    const form = $(e.target).serializeArray();
+    fetch('/api', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    })
+      .then((fromServer) => fromServer.json())
+      .then((jsonFromServer) => serverResponse(jsonFromServer))
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  /*document.getElementById('button-2015').addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = $(e.target).serializeArray();
     fetch('/api', {
@@ -124,9 +142,19 @@ function payeeConversion(arr2015) {
       },
       body: JSON.stringify(form)
     })
-      .then((jResults) => jResults.json())
-      .then((jsonResults) => serverResponse(Results))
+      .then((serverResults) => serverResults.json())
+      //.then((jsonResults) => serverResponse(jsonResults))
+      .then((jsonResults) => {
+        console.log(jsonResults);
+      })
       .catch((err) => {
         console.log(err);
       });
   });
+
+fetch('/api', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())*/

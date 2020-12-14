@@ -25,14 +25,17 @@ app.route('/api')
       console.log('GET request detected');
       const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
       const json = await data.json();  
+      console.log('data from fetch', json);
       res.json(json)
     })
   .post(async(req, res) => {
 
     console.log('POST request detected');
+    console.log('Form data in res.body', req.body);
+    
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
     const json = await data.json();
-    console.log('Fetch request data', req.body);
+    console.log('Fetch request data', json);
     res.json(json);
     console.log(data.status)
   });
