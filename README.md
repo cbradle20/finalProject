@@ -15,6 +15,9 @@
   As previously mentioned this application is incredibly simple to use. Once the application is loaded simply click the button that says display graphs and there is the graphs that are automatically generated for your usage. There is also a navigation bar that contains what the application is about and a Documentation page for the future developers that undertake this project. 
 
 ## Developer Manual 
+  In order to work on this repo you will need to pull and copy the repository to your local desktop or computer. Through there you can either work on it from your local side by creating a local server for your usage or by using an external application to host the application through a website. 
+  
+  
   
 README (top part of your README.md)
 
