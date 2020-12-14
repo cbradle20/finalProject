@@ -67,7 +67,7 @@ function payeeConversion(payeeArray) {
   }
 
 
-  function makeYourOptionsObject(policeData) {
+  function makeYourOptionsObject(policePayeeData) {
     CanvasJS.addColorSet('customColorSet1', [
       '#4661EE',
       '#EC5657',
@@ -101,7 +101,7 @@ function payeeConversion(payeeArray) {
         type: 'amount',
         name: 'payee_name',
         axisYType: 'secondary',
-        dataPoints: policeData
+        dataPoints: policePayeeData
       }]
     };
   }
