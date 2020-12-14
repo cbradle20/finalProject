@@ -14,6 +14,43 @@ fetch('/api', {
 console.log(arr2015);
 ;
 
+fetch('/api1', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())
+.then(data2 => arr2016.push(...data2))
+console.log(arr2016);
+;
+fetch('/api2', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())
+.then(data3 => arr2017.push(...data3))
+console.log(arr2017);
+;
+fetch('/api3', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())
+.then(data4 => arr2018.push(...data4))
+console.log(arr2018);
+;
+fetch('/api4', {
+  method: 'POST', 
+  headers: {
+  'Content-Type': 'application/json' 
+},
+}).then(blob => blob.json())
+.then(data5 => arr2019.push(...data5))
+console.log(arr2019);
+;
+
 function payeeConversion(payeesList) {
     return payeesList.reduce((collection, item, i) => {
       const findPayee = collection.find((f) => f.label === item.payee_name);
