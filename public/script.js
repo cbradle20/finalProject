@@ -1,21 +1,18 @@
-const arr1 = [];
- 
+const arr2015 = [];
+const arr2016 = [];
+const arr2017 = [];
+const arr2018 = [];
+const arr2019 = [];
+
 fetch('/api', {
   method: 'POST', 
   headers: {
   'Content-Type': 'application/json' 
 },
 }).then(blob => blob.json())
-.then(data => arr1.push(data))
-console.log(typeof arr1);
+.then(data => arr2015.push(...data))
+console.log(arr2015);
 ;
-document.write("start" + Object.keys(arr1) + "end");
-console.log(arr1);
-
-
-
-
-
 
 function payeeConversion(payeesList) {
     return payeesList.reduce((collection, item, i) => {
