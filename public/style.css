@@ -12,3 +12,8 @@ body{
     flex-direction: column;
     border: 1px solid black;
 }
+
+a:active{
+    font-weight: bold;
+    background-color: yellow;
+}
