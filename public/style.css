@@ -12,6 +12,19 @@ body{
     flex-direction: column;
     border: 1px solid black;
 }
+.flex-outer{
+    list-style-type : none;
+    padding : 0px 16px;
+    max-width : 800px;
+  }
+
+.flex-inner, .flex-outer{
+    align-items: center;
+    list-style-type : none;
+    padding : 0px 16px;
+    max-width : 800px;
+    display : flex;
+}
 
 a:active{
     font-weight: bold;
