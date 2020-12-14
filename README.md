@@ -13,7 +13,7 @@
   We wanted to make the use of this website as simple as possible. We realize that we could have it incredibly interactive for any data scientist to use, but that is not the information problem we see. We wanted to make a system that was easy to read and user friendly to anyone that is not technologically savy and not a data scientist. We wanted a simple interface where people can go in order to check the history of tax money usage at a moments notice. There is no shuffling through data sources or creating your own visualizations. At the click of a button there is the data you wanted and should know regarding your tax dollars. See the [User Manual](#user-manual) for more details on how this application works. 
   
   
-##Known bugs
+## Known bugs
   The main and biggest issue with this project was trying to figure out how to get our data into an array from the server. As of typing this we have yet to figure out how to accomplish this even though our code seems correct, we all know this is a common programming issue. The fetch requests work and are collecting the data from the apis, however, there is nothing to show for it besides in the console. In order to determine what our project was supposed to look like please see the interactive wireframes pdf within this repo. 
   
   
@@ -25,25 +25,4 @@
   In order to work on this repo you will need to pull and copy the repository to your local desktop or computer. Through there you can either work on it from your local side by creating a local server for your usage or by using an external application to host the application through a website. This will require installing npm by typing npm install into your console and then typing npm start in order to start the local host. 
   There is 5 get and post requests that occur on the backend. These include each of the 5 years that the data is from within the server.js file. The fetch requests for this data are in the script.js file. Each endpoint goes to the api's for the PG County website. 
   Our Road Map consists of the wireframes pdf document in the repository. Please see [Known Bugs](#known-bugs) in order to determine where we went wrong while doing this project. 
-  
-  
-  
-README (top part of your README.md)
 
-Title of your project
-Description of your project
-Link to the Heroku instance where your application can be used
-Description of target browsers (iOS? Android? Which ones? Which versions?)
-Link to User Manual
-Link to Developer Manual
-Developer Manual (bottom half of your README.md)
-
-The audience of this document is future developers who will take over your system.
-They know technical terms and have general knowledge about web applications, but do not have knowledge about your system design.
-You need to provide a technical document so that future developers can start setting up the application on their local machines, and keep working on the system development after you leave the team.
-Your Developer Manual covers:
-How to install your application and all dependencies
-How to run your application on a server
-How to run any tests you have written for your software
-The API for your server application - all GET, POST, PUT, etc endpoints, and what they each do
-A clear set of expectations around known bugs and a road-map for future development.
