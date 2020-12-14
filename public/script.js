@@ -6,7 +6,12 @@ fetch('/api', {
   'Content-Type': 'application/json' 
 },
 }).then(blob => blob.json())
-.then(data => arr1.push(...data));
+.then(data => arr1.push(data))
+console.log(typeof arr1);
+;
+document.write("start" + Object.keys(arr1) + "end");
+console.log(arr1);
+
 
 
 
