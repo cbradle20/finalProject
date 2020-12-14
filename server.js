@@ -22,7 +22,6 @@ app.use((req, res, next) => {
 
 app.route('/api')
   .get(async(req, res) => {
-<<<<<<< HEAD
       console.log('GET request detected');
       const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
       const json = await data.json();  
@@ -37,19 +36,10 @@ app.route('/api')
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
     const json = await data.json();
     console.log('Fetch request data', json);
-=======
-    console.log('GET request detected');
-    console.log('fetch request data', data);
-    })
-  .post(async(req, res) => {
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
-    const json = await data.json();
->>>>>>> 1a2b64fbb3bb3cad3a091e5f04abfa48422eace9
     res.json(json);
-    console.log('POST requested detected')
     console.log(data.status)
   });
-/*
+
 app.route('/api1')
   .get(async(req, res) => {
       console.log('GET request detected');
@@ -115,7 +105,7 @@ app.route('/api2')
     res.json(json5);
     console.log(data5.status)
   });
-*/
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
 });
@@ -129,9 +119,3 @@ export API endpoints links:
 2018: https://data.princegeorgescountymd.gov/resource/2qma-7ez9.json?agency=POLICE
 2019: https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE
 */
-
-
-
-
-
-
