@@ -1,56 +1,4 @@
-/*const arr2015 = [];
-const arr2016 = [];
-const arr2017 = [];
-const arr2018 = [];
-const arr2019 = [];
 
-fetch('/api', {
-  method: 'POST', 
-  headers: {
-  'Content-Type': 'application/json' 
-},
-}).then(blob => blob.json())
-.then(data => arr2015.push(...data))
-console.log(arr2015);
-;
-
-fetch('/api1', {
-  method: 'POST', 
-  headers: {
-  'Content-Type': 'application/json' 
-},
-}).then(blob => blob.json())
-.then(data2 => arr2016.push(...data2))
-console.log(arr2016);
-;
-fetch('/api2', {
-  method: 'POST', 
-  headers: {
-  'Content-Type': 'application/json' 
-},
-}).then(blob => blob.json())
-.then(data3 => arr2017.push(...data3))
-console.log(arr2017);
-;
-fetch('/api3', {
-  method: 'POST', 
-  headers: {
-  'Content-Type': 'application/json' 
-},
-}).then(blob => blob.json())
-.then(data4 => arr2018.push(...data4))
-console.log(arr2018);
-;
-fetch('/api4', {
-  method: 'POST', 
-  headers: {
-  'Content-Type': 'application/json' 
-},
-}).then(blob => blob.json())
-.then(data5 => arr2019.push(...data5))
-console.log(arr2019);
-;
-*/
 
 function payeeConversion(payeeArray) {
   return payeeArray.reduce((collection, item, i) => {
@@ -84,13 +32,16 @@ function makeYourOptionsObject(policePayeeData) {
     },
     axisX: {
       interval: 1,
-      labelFontSize: 12
+      labelFontSize: 8,
+      labelAngle: 0,
+      viewportMaximum: 15,
+      title: 'Top Payees'
     },
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Top Payers',
-      labelFontSize: 12,
+      title: 'Amount',
+      labelFontSize: 10,
       scaleBreaks: {customBreaks: [
         { startValue: 40, endValue: 50, color: '#FAA586' },
         { startValue: 85, endValue: 100, color: '#FAA586' },
@@ -98,7 +49,7 @@ function makeYourOptionsObject(policePayeeData) {
       ]}
     },
     data: [{
-      type: 'amount',
+      type: 'column',
       name: 'payee_name',
       axisYType: 'secondary',
       dataPoints: policePayeeData
@@ -110,6 +61,8 @@ function serverResponse(jsonResults) {
   console.log('jsonResults', jsonResults);
   sessionStorage.setItem('payeesList', JSON.stringify(jsonResults));
   const reorganizedData = payeeConversion(jsonResults);
+  reorganizedData.sort();
+  reorganizedData.reverse();
   const options = makeYourOptionsObject(reorganizedData);
   const chart = new CanvasJS.Chart('chartContainer', options);
   chart.render();
@@ -118,6 +71,7 @@ function serverResponse(jsonResults) {
 document.body.addEventListener('submit', async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
+
   fetch('/api', {
     method: 'POST',
     headers: {
