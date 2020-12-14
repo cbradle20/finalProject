@@ -51,8 +51,8 @@ fetch('/api4', {
 console.log(arr2019);
 ;
 
-function payeeConversion(payeesList) {
-    return payeesList.reduce((collection, item, i) => {
+function payeeConversion(arr2015) {
+    return arr2015.reduce((collection, item, i) => {
       const findPayee = collection.find((f) => f.label === item.payee_name);
       if (!findPayee) { 
         collection.push({
@@ -65,7 +65,6 @@ function payeeConversion(payeesList) {
     }, [])
   }
 
- 
 
   function makeYourOptionsObject(policeData) {
     CanvasJS.addColorSet('customColorSet1', [
