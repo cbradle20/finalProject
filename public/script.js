@@ -3,7 +3,7 @@ const arr2016 = [];
 const arr2017 = [];
 const arr2018 = [];
 const arr2019 = [];
-
+/*
 fetch('/api', {
   method: 'POST', 
   headers: {
@@ -12,7 +12,6 @@ fetch('/api', {
 }).then(blob => blob.json())
 .then(data => arr2015.push(...data))
 console.log(arr2015);
-;
 
 fetch('/api1', {
   method: 'POST', 
@@ -22,7 +21,7 @@ fetch('/api1', {
 }).then(blob => blob.json())
 .then(data2 => arr2016.push(...data2))
 console.log(arr2016);
-;
+
 fetch('/api2', {
   method: 'POST', 
   headers: {
@@ -31,7 +30,7 @@ fetch('/api2', {
 }).then(blob => blob.json())
 .then(data3 => arr2017.push(...data3))
 console.log(arr2017);
-;
+
 fetch('/api3', {
   method: 'POST', 
   headers: {
@@ -40,7 +39,7 @@ fetch('/api3', {
 }).then(blob => blob.json())
 .then(data4 => arr2018.push(...data4))
 console.log(arr2018);
-;
+
 fetch('/api4', {
   method: 'POST', 
   headers: {
@@ -49,7 +48,7 @@ fetch('/api4', {
 }).then(blob => blob.json())
 .then(data5 => arr2019.push(...data5))
 console.log(arr2019);
-;
+
 
 function payeeConversion(arr2015) {
     return arr2015.reduce((collection, item, i) => {
@@ -64,7 +63,7 @@ function payeeConversion(arr2015) {
       return collection;
     }, [])
   }
-
+*/
 
   function makeYourOptionsObject(policeData) {
     CanvasJS.addColorSet('customColorSet1', [
@@ -105,16 +104,17 @@ function payeeConversion(arr2015) {
     };
   }
 
-  function serverResponse(jsonResults) {
-    console.log('jsonResults', jsonResults);
-    sessionStorage.setItem('payeesList', JSON.stringify(jsonResults));
-    const reorganizedData = payeeConversion(jsonResults);
+function serverResponse(jsonFromServer) {
+    console.log('jsonFromServer', jsonFromServer);
+    sessionStorage.setItem('payeesList', JSON.stringify(jsonFromServer));
+    const reorganizedData = payeeConversion(jsonFromServer);
     const options = makeYourOptionsObject(reorganizedData);
     const chart = new CanvasJS.Chart('chartContainer', options);
     chart.render();
-  }
-
-  document.body.addEventListener('submit', async (e) => {
+}
+  
+  document.body.addEventListener('Create Graph 2015', async (e) => {
+    document.getElementById('button-2015').addEventListener('button');
     e.preventDefault();
     const form = $(e.target).serializeArray();
     fetch('/api', {
@@ -124,9 +124,9 @@ function payeeConversion(arr2015) {
       },
       body: JSON.stringify(form)
     })
-      .then((jResults) => jResults.json())
-      .then((jsonResults) => serverResponse(Results))
-      .catch((err) => {
-        console.log(err);
-      });
+    .then(blob => blob.json())
+    .then(data => arr2015.push(...data))
+    .catch((err) => {
+      console.log(err);
+    });
   });
