@@ -23,7 +23,9 @@ app.use((req, res, next) => {
 app.route('/api')
   .get(async(req, res) => {
       console.log('GET request detected');
-      res.send(`Lab 5 for ${process.env.NAME}`);
+      const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
+      const json = await data.json();  
+      res.json(json)
     })
   .post(async(req, res) => {
 
@@ -38,7 +40,9 @@ app.route('/api')
 app.route('/api1')
   .get(async(req, res) => {
       console.log('GET request detected');
-      res.send(`Lab 5 for ${process.env.NAME}`);
+      const data2 = await fetch('https://data.princegeorgescountymd.gov/resource/csi4-9jzc.json?agency=POLICE');
+      const json2 = await data2.json();  
+      res.json(json2)
     })
   .post(async(req, res) => {
 
@@ -52,7 +56,9 @@ app.route('/api1')
 app.route('/api2')
   .get(async(req, res) => {
       console.log('GET request detected');
-      res.send(`Lab 5 for ${process.env.NAME}`);
+      const data3 = await fetch('https://data.princegeorgescountymd.gov/resource/364y-gm2b.json?agency=POLICE');
+      const json3 = await data3.json();  
+      res.json(json3)
     })
   .post(async(req, res) => {
 
@@ -67,7 +73,9 @@ app.route('/api2')
   app.route('/api3')
   .get(async(req, res) => {
       console.log('GET request detected');
-      res.send(`Lab 5 for ${process.env.NAME}`);
+      const data4 = await fetch('https://data.princegeorgescountymd.gov/resource/2qma-7ez9.json?agency=POLICE');
+      const json4 = await data4.json();  
+      res.json(json4)
     })
   .post(async(req, res) => {
 
@@ -81,7 +89,9 @@ app.route('/api2')
   app.route('/api4')
   .get(async(req, res) => {
       console.log('GET request detected');
-      res.send(`Lab 5 for ${process.env.NAME}`);
+      const data5 = await fetch('https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE');
+      const json5 = await data5.json();  
+      res.json(json5)
     })
   .post(async(req, res) => {
 
