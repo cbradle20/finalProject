@@ -16,10 +16,12 @@
   
 ## User Manual
   As previously mentioned this application is incredibly simple to use. Once the application is loaded simply click the button that says display graphs and there is the graphs that are automatically generated for your usage. There is also a navigation bar that contains what the application is about and a Documentation page for the future developers that undertake this project.
-  In order to display the graphs you want select the year you are curious about and two graphs will show up. The graphs include the top 3 agencies that were paid and the average amount paid per payment. If you click on all it will include both of those graphs through the 5 years and also include a timeseries graph for the amount spent each year from 2015-2019. 
-
+  In order to display the graphs you want select the year you are curious about and a graph will show up. The graphs include the top 15 agencies that were paid by the year.
+  
+  
+  
 ## Developer Manual 
   In order to work on this repo you will need to pull and copy the repository to your local desktop or computer. Through there you can either work on it from your local side by creating a local server for your usage or by using an external application to host the application through a website. This will require installing npm by typing npm install into your console and then typing npm start in order to start the local host. 
-  There is 5 get and post requests that occur on the backend. These include each of the 5 years that the data is from within the server.js file. The fetch requests for this data are in the script.js file. Each endpoint goes to the api's for the PG County website. 
-  Our Road Map consists of the wireframes pdf document in the repository. Please see [Known Bugs](#known-bugs) in order to determine where we went wrong while doing this project. 
+  There is 5 get and post requests that occur on the backend. These include each of the 5 years that the data is from within the server.js file. The fetch requests for this data are in the script.js file. Each endpoint goes to the api's for the PG County website. We created 5 different eventlisteners that run when the user clicks the buttons and it will display the graph for that specific year. 
+  Two of the aspects that we did not get to in this project were the addition of another graph per year and the combined dataset. The reason we did not get to adding another graph was simply we felt that we could not make it look presentable to user, we felt it did more harm than good. We simply could not figure out how to create an entirely new array that combines all five of the apis into one. In order to see what our whole vision was for this project please check the wireframes pdf that is within this repository. 
 

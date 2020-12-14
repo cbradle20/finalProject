@@ -68,6 +68,126 @@ function serverResponse(jsonResults) {
   chart.render();
 }
 
+var but2015 = document.getElementById("button-2015");
+
+but2015.addEventListener("click", async (e) => {
+  e.preventDefault(e);
+  const form = $(e.target).serializeArray();
+  fetch('/api', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+var but2016 = document.getElementById("button-2016");
+
+but2016.addEventListener("click", async (e) => {
+  e.preventDefault(e);
+  const form = $(e.target).serializeArray();
+  fetch('/api1', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+var but2017 = document.getElementById("button-2017");
+
+but2017.addEventListener("click", async (e) => {
+  e.preventDefault(e);
+  const form = $(e.target).serializeArray();
+  fetch('/api2', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+var but2018 = document.getElementById("button-2018");
+
+
+but2018.addEventListener("click", async (e) => {
+  e.preventDefault(e);
+  const form = $(e.target).serializeArray();
+  fetch('/api3', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+var but2019 = document.getElementById("button-2019");
+
+
+
+but2019.addEventListener("click", async (e) => {
+  e.preventDefault(e);
+  const form = $(e.target).serializeArray();
+  fetch('/api4', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 document.body.addEventListener('submit', async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
@@ -85,6 +205,8 @@ document.body.addEventListener('submit', async (e) => {
       console.log(err);
     });
 });
+*/
+
 
 /*document.getElementById('button-2015').addEventListener('submit', async (e) => {
   e.preventDefault();
