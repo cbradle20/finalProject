@@ -5,8 +5,10 @@
   - [Known bugs](#known-bugs)
   - [User Manual](#user-manual)
   - [Developer Manual](#developer-manual)
+  
 ##Known bugs
   The main and biggest issue with this project was trying to figure out how to get our data into an array from the server. As of typing this we have yet to figure out how to accomplish this even though our code seems correct, we all know this is a common programming issue. The fetch requests work and are collecting the data from the apis, however, there is nothing to show for it besides in the console. In order to determine what our project was supposed to look like please see the interactive wireframes pdf within this repo. 
+  
 ## Description
   Our project is a relatively simple project. We found that tax data is far too large and not easy to read. The website does offer interactivity to create your own visualizations of the tax data, however, we do not think people will actually use this feature. This is why we set out to create a website that creates the graphs and displays them for you. We would create a certain amount of graphs that would tell a story of how the tax money is used within the system. We originally wanted to include all facetes of PG County. This would be have been far too much data to work with and we ended up narrowing our focus to just Police data. The data includes the amount of money spent, payee name, agency name, zip code, and payment description. We primarily used the money spent, payee name, and agency name. The agency name for our graphs will always be Police, while money spent and payee name are not static variables. The graphs generated are graphs that we thought, as data scientists, describe the best picture of your tax dollars at work. We used four different apis that will be linked at the top of this page. We used tax data from 2015-2019, we excluded 2020 as it would only give us an incomplete dataset ending in September. This would have heavily skewed our data and not showed the true picture. 
   
