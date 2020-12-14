@@ -28,12 +28,13 @@ app.route('/api')
   .post(async(req, res) => {
 
     console.log('POST request detected');
-    const data = await fetch('https://data.princegeorgescountymd.gov/resource/bh8z-9wkk.json?agency=POLICE');
+    const data = await fetch('https://data.princegeorgescountymd.gov/resource/p32t-azw8.json?agency=POLICE');
     const json = await data.json();
     console.log('Fetch request data', req.body);
     res.json(json);
     console.log(data.status)
   });
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`);
