@@ -53,8 +53,11 @@ a:active{
 
 @media screen and (max-width: 1600px) {
     body {
-        background-color:#CF102D;
+
         max-width: 1000px;
+        background-color: white;
+        justify-content: center;
+    }
     }
     .header {
         font-family: Goldman;
@@ -73,7 +76,6 @@ a:active{
     }
     
     .wrapper {
-        background-color: #CF102D;
         display:flex;
         flex-wrap:wrap;
         justify-content: flex-start;
@@ -83,9 +85,6 @@ a:active{
     }
     
     .content {
-        font-family: Goldman;
-        background: rgb(2,0,36);
-        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,213,32,1) 100%, rgba(0,212,255,1) 100%);
         color:white;
         width: 500px;
         margin: auto;
