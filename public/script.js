@@ -1,11 +1,24 @@
 
-
 function payeeConversion(payeeArray) {
   return payeeArray.reduce((collection, item, i) => {
     const onlyPayee = collection.find((f) => f.label === item.payee_name);
     if (!onlyPayee) { 
       collection.push({
         label: item.payee_name, y:1
+      });
+    } else {
+      onlyPayee.y +=1;
+    }
+    return collection;
+  }, [])
+}
+
+function vendorConversion(payeeArray) {
+  return payeeArray.reduce((collection, item, i) => {
+    const onlyPayee = collection.find((f) => f.label === item.vendor_name);
+    if (!onlyPayee) { 
+      collection.push({
+        label: item.vendor_name, y:1
       });
     } else {
       onlyPayee.y +=1;
@@ -50,7 +63,7 @@ function makeYourOptionsObject(policePayeeData) {
     },
     data: [{
       type: 'column',
-      name: 'payee_name',
+      name: 'payee_name' || 'vendor_name',
       axisYType: 'secondary',
       dataPoints: policePayeeData
     }]
@@ -61,6 +74,17 @@ function serverResponse(jsonResults) {
   console.log('jsonResults', jsonResults);
   sessionStorage.setItem('payeesList', JSON.stringify(jsonResults));
   const reorganizedData = payeeConversion(jsonResults);
+  reorganizedData.sort();
+  reorganizedData.reverse();
+  const options = makeYourOptionsObject(reorganizedData);
+  const chart = new CanvasJS.Chart('chartContainer', options);
+  chart.render();
+}
+
+function serverVendorResponse(jsonResults){
+  console.log('jsonResults', jsonResults);
+  sessionStorage.setItem('payeesList', JSON.stringify(jsonResults));
+  const reorganizedData = vendorConversion(jsonResults);
   reorganizedData.sort();
   reorganizedData.reverse();
   const options = makeYourOptionsObject(reorganizedData);
@@ -162,7 +186,7 @@ but2019.addEventListener("click", async (e) => {
     body: JSON.stringify(form)
   })
     .then((fromServer) => fromServer.json())
-    .then((jsonFromServer) => serverResponse(jsonFromServer))
+    .then((jsonFromServer) => serverVendorResponse(jsonFromServer))
     .catch((err) => {
       console.log(err);
     });
