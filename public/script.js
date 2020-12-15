@@ -1,4 +1,6 @@
-
+/* The purpose of this function is to convert the retrieved .JSON data file into a usable/readable
+array that can be plotted within the CanvasJS chart. This involved taking the primary object element
+being the payee_name out and forcing into a new collection/array. */
 function payeeConversion(payeeArray) {
   return payeeArray.reduce((collection, item, i) => {
     const onlyPayee = collection.find((f) => f.label === item.payee_name);
@@ -13,6 +15,9 @@ function payeeConversion(payeeArray) {
   }, [])
 }
 
+/*This function works in a similar fashion to the above. The only difference is that this searches for the 
+"vendor_name" property within the object. The vendor_name is only present in the last dataset/JSON file in
+the place of "payee_name"; it was labeled differently from the other JSON files, which had the "payee_name".*/
 function vendorConversion(payeeArray) {
   return payeeArray.reduce((collection, item, i) => {
     const onlyPayee = collection.find((f) => f.label === item.vendor_name);
@@ -28,6 +33,7 @@ function vendorConversion(payeeArray) {
 }
 
 
+//This function will create the main chart for each .JSON file that is pulled from the server.
 function makeYourOptionsObject(policePayeeData) {
   CanvasJS.addColorSet('customColorSet1', [
     '#4661EE',
@@ -41,7 +47,7 @@ function makeYourOptionsObject(policePayeeData) {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Police Data Test'
+      text: 'The Top Payees Within the Police Agency'
     },
     axisX: {
       interval: 1,
@@ -53,7 +59,7 @@ function makeYourOptionsObject(policePayeeData) {
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Amount',
+      title: 'Number of Payments',
       labelFontSize: 10,
       scaleBreaks: {customBreaks: [
         { startValue: 40, endValue: 50, color: '#FAA586' },
@@ -61,6 +67,8 @@ function makeYourOptionsObject(policePayeeData) {
         { startValue: 140, endValue: 175, color: '#FAA586' }
       ]}
     },
+    /*The "name" aspect of the data changes based on the dataset. The last .JSON file has "vendor_name" in the place
+    of "payee_name". This aspect checks for both names.*/
     data: [{
       type: 'column',
       name: 'payee_name' || 'vendor_name',
