@@ -91,9 +91,10 @@ function serverVendorResponse(jsonResults){
   const chart = new CanvasJS.Chart('chartContainer', options);
   chart.render();
 }
+/* create element of based on the id of the button*/
 
 var but2015 = document.getElementById("button-2015");
-
+/* fetch the api of the 2015 data*/
 but2015.addEventListener("click", async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
@@ -110,9 +111,9 @@ but2015.addEventListener("click", async (e) => {
       console.log(err);
     });
 });
-
+/*create an element based on the id of the button from 2016 */
 var but2016 = document.getElementById("button-2016");
-
+/*fetch the api for the 2016 data */
 but2016.addEventListener("click", async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
@@ -130,9 +131,10 @@ but2016.addEventListener("click", async (e) => {
     });
 });
 
-
+/* Create element for the 2017 button*/
 var but2017 = document.getElementById("button-2017");
 
+/* fetch the data from the 2017 api*/
 but2017.addEventListener("click", async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
@@ -149,10 +151,10 @@ but2017.addEventListener("click", async (e) => {
       console.log(err);
     });
 });
-
+/* Create element for the 2018 data */ 
 var but2018 = document.getElementById("button-2018");
 
-
+/* fetch the data from the 2018 api*/
 but2018.addEventListener("click", async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
@@ -170,11 +172,11 @@ but2018.addEventListener("click", async (e) => {
     });
 });
 
-
+/* create element for the 2019 data*/
 var but2019 = document.getElementById("button-2019");
 
 
-
+/*fetch the 2019 api datas */
 but2019.addEventListener("click", async (e) => {
   e.preventDefault(e);
   const form = $(e.target).serializeArray();
