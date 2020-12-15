@@ -1,11 +1,25 @@
 body{
     background-color: white;
-
+    justify-content: center;
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
 .container-1 {
     text-align: center;
     padding-top: 10px;
 }
+.container-2 {
+
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
 .flex-container-visualizations{
     display: flexbox;
     flex-wrap: wrap;
