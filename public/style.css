@@ -59,21 +59,7 @@ a:active{
         justify-content: center;
     }
     }
-    .header {
-        font-family: Goldman;
-        text-decoration: underline;
-        font-weight: bold 500;
-        font-size: medium;
-        display:flex;
-        flex-wrap:wrap;
-        justify-content: flex-start;
-        
-        color: white;
-        margin: 0;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
+    
     
     .wrapper {
         display:flex;
