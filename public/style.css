@@ -51,13 +51,24 @@ a:active{
 }
 
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 320px) {
     body {
 
         max-width: 1000px;
         background-color: white;
         justify-content: center;
     }
+    
+    .flex-outer{
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .flex-inner{
+        flex-wrap: wrap;
+        flex-direction: column;
+        display: flex;
     }
     
     
