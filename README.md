@@ -16,7 +16,7 @@
   
 ## User Manual
   As previously mentioned this application is incredibly simple to use. Once the application is loaded simply click the button that says display graphs and there is the graphs that are automatically generated for your usage. There is also a navigation bar that contains what the application is about and a Documentation page for the future developers that undertake this project.
-  In order to display the graphs you want select the year you are curious about and a graph will show up. The graphs include the top 15 agencies that were paid by the year.
+  In order to display the graphs you want select the year you are curious about and a graph will show up. The graphs include the top 15 agencies that were paid the most often each year. 
   
   
   
