@@ -12,12 +12,17 @@ body{
 .container-1 {
     text-align: center;
     padding-top: 10px;
+
 }
 .container-2 {
 
     display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
     justify-content: center;
     border: 1px solid black;
+    max-width: 75%;
+    padding: 10px;
 }
 
 .flex-container-visualizations{
@@ -60,9 +65,9 @@ a:active{
     }
     
     .flex-outer{
-        flex-wrap: wrap;
-        flex-direction: column;
         display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
     }
 
     .flex-inner{
@@ -70,6 +75,7 @@ a:active{
         flex-direction: column;
         display: flex;
     }
+    
     
     
     .wrapper {
