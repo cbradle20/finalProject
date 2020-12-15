@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-
+/* This is the post and get requests of the 2015 api*/
 app.route('/api')
   .get(async(req, res) => {
       console.log('GET request detected');
@@ -39,7 +39,7 @@ app.route('/api')
     res.json(json);
     console.log(data.status)
   });
-
+/* This is the post and get requests of the 2016 api*/
 app.route('/api1')
   .get(async(req, res) => {
       console.log('GET request detected');
@@ -56,6 +56,7 @@ app.route('/api1')
     res.json(json2);
     console.log(data2.status)
   });
+/* This is the post and get requests of the 2017 api*/
 app.route('/api2')
   .get(async(req, res) => {
       console.log('GET request detected');
@@ -73,6 +74,7 @@ app.route('/api2')
     console.log(data3.status)
   });
 
+/* This is the post and get requests of the 2018 api*/
   app.route('/api3')
   .get(async(req, res) => {
       console.log('GET request detected');
@@ -89,6 +91,7 @@ app.route('/api2')
     res.json(json4);
     console.log(data4.status)
   });
+  /* This is the post and get requests of the 2019 api*/
   app.route('/api4')
   .get(async(req, res) => {
       console.log('GET request detected');
